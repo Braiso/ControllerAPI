@@ -5,6 +5,8 @@ using ABB.Robotics.Controllers.RapidDomain;
 using System.IO;
 using ABB.Robotics.Controllers.Configuration;
 using System.Collections.Generic;
+using System.Reflection;
+using System.Diagnostics.Eventing.Reader;
 
 namespace ControllerAPI
 {
@@ -47,8 +49,8 @@ namespace ControllerAPI
                 Directory.CreateDirectory(taskDir);
 
                 // Por cada tarea, mostramos sus módulos
-                Module[] modules = task.GetModules();
-                foreach (Module module in modules)
+                ABB.Robotics.Controllers.RapidDomain.Module[] modules = task.GetModules();
+                foreach (ABB.Robotics.Controllers.RapidDomain.Module module in modules)
                 {
                     Console.WriteLine($"    Módulo: {module.Name}");
 
@@ -60,7 +62,8 @@ namespace ControllerAPI
                     RapidSymbol[] symbols = module.SearchRapidSymbol(sProp);
 
                     // Diccionario para agrupar datos por tipo, para luego escribirlos en archivos separados por tipo
-                    var datosPorTipo = new Dictionary<string, List<string>>();
+                    var datosPorTipo = new Dictionary<string, List<RapidData>>();
+
 
                     // Itera sobre los símbolos encontrados y extrae los valores de datos RAPID para organizarlos por tipo
                     foreach (RapidSymbol symbol in symbols)
@@ -71,17 +74,19 @@ namespace ControllerAPI
                             RapidData data = module.GetRapidData(symbol);
 
                             // Obtiene el tipo RAPID declarado (como "num", "robtarget", "tooldata"...)
-                            string tipo = data.RapidType;
+                            // Si no hay aún una lista para ese RapidData, se crea
+                            Type tipoValor = data.Value?.GetType();
+                            if (tipoValor == null) continue;
+
+                            // La llave del diccionario sera el nombre del tipo RAPID
+                            string tipoNombre = tipoValor.Name;
 
                             // Si no hay aún una lista para ese tipo, se crea
-                            if (!datosPorTipo.ContainsKey(tipo))
-                                datosPorTipo[tipo] = new List<string>();
+                            if (!datosPorTipo.ContainsKey(tipoNombre))
+                                datosPorTipo[tipoNombre] = new List<RapidData>();
 
-                            // Usa ToString solo si hay valor disponible, de lo contrario usa marcador
-                            string valor = data.Value?.ToString() ?? "<sin valor>";
-
-                            // Añade la línea formateada con nombre y valor al grupo correspondiente
-                            datosPorTipo[tipo].Add($"{data.Name},{valor}");
+                            // Se añade instsancia de RapidData a la lista correspondiente al tipo
+                            datosPorTipo[tipoNombre].Add(data);
                         }
                         catch (Exception ex)
                         {
@@ -89,6 +94,7 @@ namespace ControllerAPI
                             Console.WriteLine($"{symbol.Name},Error: {ex.Message}");
                         }
                     }
+
                     // Escribe un archivo CSV por tipo de dato
                     foreach (var entry in datosPorTipo)
                     {
@@ -96,13 +102,21 @@ namespace ControllerAPI
                         string tipoArchivo = Path.Combine(taskDir, module.Name + $"_{entry.Key}.csv");
                         using (StreamWriter writer = new StreamWriter(tipoArchivo))
                         {
-                            writer.WriteLine("NombreDato,Valor");
-                            foreach (var linea in entry.Value)
+                            writer.WriteLine(Parse.GenerarEncabezadoDesdeTipo(entry.Key));
+                            foreach (var data in entry.Value)
                             {
-                                writer.WriteLine(linea);
+                                string valor = "<sin valor>";
+
+                                if (entry.Key == "Pos")
+                                {
+                                     valor = Parse.ParseRapidData(data);
+                                }   
+                                
+                                writer.WriteLine($"{data.Name};{valor}");
                             }
                         }
                     }
+                   
                 }
             }
 
@@ -110,11 +124,8 @@ namespace ControllerAPI
             controller.Logoff();
 
             // Espera entrada del usuario para terminar
-            Console.WriteLine("Press any key to terminate");
-            while (!Console.KeyAvailable)
-            {
-                System.Threading.Thread.Sleep(100);
-            }
+            //Console.WriteLine("Presiona una tecla para salir");
+            //Console.ReadKey(intercept:true);
         }
     }
 }
