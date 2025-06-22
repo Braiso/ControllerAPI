@@ -7,6 +7,7 @@ using ABB.Robotics.Controllers.Configuration;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Diagnostics.Eventing.Reader;
+using System.Security.Claims;
 
 namespace ControllerAPI
 {
@@ -14,6 +15,12 @@ namespace ControllerAPI
     {
         static void Main(string[] args)
         {
+            // Usada para volcar el valor del datos que se va a esciribir en el CSV 
+            string valor;
+
+            // Lista para almacenar los datos que todavia no se han parseado a CSV
+            var datosToParse = new List<string>();
+
             // Crea un escáner de red para detectar controladores disponibles (virtuales en este caso)
             NetworkScanner scanner = new NetworkScanner();
 
@@ -64,7 +71,6 @@ namespace ControllerAPI
                     // Diccionario para agrupar datos por tipo, para luego escribirlos en archivos separados por tipo
                     var datosPorTipo = new Dictionary<string, List<RapidData>>();
 
-
                     // Itera sobre los símbolos encontrados y extrae los valores de datos RAPID para organizarlos por tipo
                     foreach (RapidSymbol symbol in symbols)
                     {
@@ -73,13 +79,8 @@ namespace ControllerAPI
                             // Obtiene el objeto RapidData asociado al símbolo
                             RapidData data = module.GetRapidData(symbol);
 
-                            // Obtiene el tipo RAPID declarado (como "num", "robtarget", "tooldata"...)
-                            // Si no hay aún una lista para ese RapidData, se crea
-                            Type tipoValor = data.Value?.GetType();
-                            if (tipoValor == null) continue;
-
-                            // La llave del diccionario sera el nombre del tipo RAPID
-                            string tipoNombre = tipoValor.Name;
+                            // La llave del diccionario sera un string con el nombre del tipo RAPID
+                            string tipoNombre = data.RapidType;
 
                             // Si no hay aún una lista para ese tipo, se crea
                             if (!datosPorTipo.ContainsKey(tipoNombre))
@@ -102,21 +103,43 @@ namespace ControllerAPI
                         string tipoArchivo = Path.Combine(taskDir, module.Name + $"_{entry.Key}.csv");
                         using (StreamWriter writer = new StreamWriter(tipoArchivo))
                         {
+                            // Escribe el encabezado del CSV basado en el tipo RAPID
                             writer.WriteLine(Parse.GenerarEncabezadoDesdeTipo(entry.Key));
                             foreach (var data in entry.Value)
                             {
-                                string valor = "<sin valor>";
 
-                                if (entry.Key == "Pos")
+                                if (entry.Key == "pos" && data.Value is Pos pos)
                                 {
-                                     valor = Parse.ParseRapidData(data);
-                                }   
+                                    valor = Parse.ParsePos(pos);
+                                }
+                                else if (entry.Key == "wobjdata" && data.Value is WobjData wobj)
+                                {
+                                    valor = Parse.ParseWobjData(wobj);
+                                }
+                                else if (entry.Key == "accdata" && data.Value is UserDefined accdata)
+                                {
+                                    valor = Parse.ParseAccData(accdata);
+                                }
+                                else
+                                {
+                                    valor = data.Value.ToString();
+                                    datosToParse.Add(entry.Key);
+                                }
                                 
                                 writer.WriteLine($"{data.Name};{valor}");
                             }
                         }
                     }
-                   
+                }
+            }
+
+            // Si hay tipos de datos que no se han implementado, los añadimos al final del archivo
+            if (datosToParse.Count > 0)
+            {
+                Console.WriteLine("Tipos de datos no implementados:");
+                foreach (string tipoDato in datosToParse)
+                {
+                    Console.WriteLine($"Implementar {tipoDato}");
                 }
             }
 
