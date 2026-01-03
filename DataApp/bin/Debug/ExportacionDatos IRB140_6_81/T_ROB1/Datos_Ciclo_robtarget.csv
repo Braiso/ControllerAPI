@@ -1,2 +1,2 @@
-Nombre;Valor
-pCogida;[[325,400,-15],[6.12303E-17,1,0,0],[1,0,0,0],[0,0,0,0,0,0]]
+Nombre;Trans.X;Trans.Y;Trans.Z;Rot.Q1;Rot.Q2;Rot.Q3;Rot.Q4;Robconf.Cf1;Robconf.Cf4;Robconf.Cf6;Robconf.Cfx;Extax.Eax_a;Extax.Eax_b;Extax.Eax_c;Extax.Eax_d;Extax.Eax_e;Extax.Eax_f
+test_robtarget;325;400;-15;6,12303E-17;1;0;0;1;0;0;0;0;0;0;0;0;0

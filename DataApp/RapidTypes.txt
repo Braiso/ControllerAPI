@@ -1,0 +1,80 @@
+! atomico
+3.3 bool - Valores lógicos .........................................................................................1654
+3.21 dnum - Valores numéricos dobles ........................................................................ 1695
+3.44 num - Valores numéricos .................................................................................... 1749
+3.71 string - Cadenas ................................................................................................1811
+
+! alias num
+3.6 byte - Valores enteros 0-255 ................................................................................ 1659
+3.19 dionum - Valores digitales (0-1) ............................................................................1693
+3.22 errdomain - Dominio del error .............................................................................. 1697
+3.23 errnum - Número de error ................................................................................... 1699
+3.25 errtype - Tipo de error ........................................................................................ 1709
+3.26 event_type - Tipo de rutina de evento ................................................................... 1710
+3.27 exec_level - Nivel de ejecución ............................................................................ 1711
+3.30 handler_type - Tipo de gestor de ejecución ............................................................ 1717
+3.31 icondata - Datos de visualización de iconos ........................................................... 1718
+3.32 identno - Identidad para las instrucciones de movimiento ......................................... 1720
+3.33 intnum - Identidad de interrupción ........................................................................ 1722
+3.35 iodevice_state - Estado del dispositivo de E/S ........................................................ 1725
+3.36 ionetwork_state - Estado de la red de E/S .............................................................. 1726
+3.40 loadidnum - Tipo de identificación de carga ........................................................... 1737
+3.45 opnum - Operador de comparación ...................................................................... 1751
+3.47 paridnum - Tipo de identificación de parámetro .......................................................1757
+3.48 paridvalidnum - Resultado de ParIdRobValid .......................................................... 1759
+3.65 signalorigin - Describe el origen de la señal de E/S ..................................................1794
+3.68 socketstatus - Estado de comunicación de zócalo ................................................... 1799
+3.74 symnum - Número simbólico ............................................................................... 1816
+3.79 testsignal - Señal de prueba ................................................................................ 1825
+3.81 tpnum - Número de ventana del FlexPendant ......................................................... 1834
+3.86 triggmode - Disparar modo de acción ....................................................................1843
+3.87 tsp_status: Estado de panel de selección de tareas ................................................. 1846
+3.88 tunetype - Tipo de ajuste de servo ........................................................................ 1848
+
+! alias string
+3.24 errstr - Cadena de error ...................................................................................... 1708
+
+! record, user-defined?
+3.51 pos - Posiciones (sólo X, Y y Z) ............................................................................1765
+3.46 orient - Orientación ............................................................................................ 1752
+3.52 pose - Transformaciones de coordenadas ............................................................. 1767
+3.16 confdata - Datos de configuración del robot ........................................................... 1682
+3.62 robtarget - Datos de posición ...............................................................................1786
+3.61 robjoint - Posición de eje de los ejes del robot ........................................................ 1785
+3.28 extjoint - Posición de los ejes externos .................................................................. 1712
+3.37 jointtarget - Datos de posición de eje .................................................................... 1727
+3.91 wobjdata - Datos del objeto de trabajo .................................................................. 1852
+3.80 tooldata - Datos de herramienta ........................................................................... 1827
+3.39 loaddata - Datos de carga ................................................................................... 1730
+3.69 speeddata - Datos de velocidad ........................................................................... 1800
+3.94 zonedata - Datos de zonas .................................................................................. 1860
+3.76 stoppointdata - Stop point data ............................................................................ 1590
+(Sin referencia)accdata - (Sin comentrario)........................ (No documentado)
+(Sin referencia)veldata - (Sin comentrario)........................ (No documentado)
+
+
+3.29 flypointdata - Datos para inicio/fin sobre la marcha .................................................. 1714
+3.38 listitem - Estructura de datos de elementos de lista ................................................. 1729
+3.43 motsetdata - Datos de parámetros de movimiento ................................................... 1742
+3.50 pnpdata: Configurar las trayectorias de elección y colocación ................................... 1763
+3.53 processtimes - Tiempos de proceso ..................................................................... 1768
+3.54 progdisp - Desplazamiento de programa ............................................................... 1769
+3.56 restartblkdata - bloque de datos para el reinicio ...................................................... 1774
+3.57 restartdata - Datos de reinicio de señales de disparo ............................................... 1776
+3.58 rmqheader - Encabezado de mensaje de RAPID Message Queue .............................. 1780
+3.63 sensorvardata - Configuración de múltiples variables de datos para la interfaz de sensores .........................................................................................................1790 
+3.72 supervtimeouts - Tiempos límite de supervisión de intercambio ................................. 1813
+3.78 tasks - Tareas de programa RAPID ....................................................................... 1823
+3.84 triggios - Eventos de posicionamiento, trigg ........................................................... 1838
+3.85 triggiosdnum - Eventos de posicionamiento, trigg ................................................... 1841
+3.89 uidisplaynum - ID de instancia para UIDisplay ........................................................ 1849
+3.90 weavestartdata - Datos de inicio de oscilación ........................................................ 1850
+3.93 wztemporary - Datos de zona mundo temporal ....................................................... 1858
+3.92 wzstationary - Datos de zona mundo estacionaria ................................................... 1856
+
+
+
+
+
+
+

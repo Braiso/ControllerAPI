@@ -1,0 +1,6 @@
+Nombre;Valor
+stSysID_Tarea;"4600-112104"
+stTaskName;"T_ROB1"
+stPosicionDestino;["IrPosicionSobreMesa","CogerPieza","IrPosicionEsperaCaja","DejarPieza"]
+stPosicionAlcanzadaCalib;["CalibCamaraOK_T1","CalibCamaraOK","GetCalibOK_T1","GetCalibOK"]
+stPosicionAlcanzada;["PosicionSobreMesaT1","PosicionSobreMesa","PiezaCogidaT1","ApiracionActivada","PiezaCogida","EsperaDejadaPiezaT1","EsperaDejadaPiezaT2","EsperaDejadaPieza","PiezaColocadaT1","AspiracionDesactivada","PiezaColocada","MesaHomeT1"]

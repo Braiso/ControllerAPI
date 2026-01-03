@@ -1,0 +1,2 @@
+Nombre;Type;Progsynch;Inpos.Position;Inpos.Speed;Inpos.Mintime;Inpos.Maxtime;Inpos.Stoptime;Inpos.Followtime;Inpos.Signal;Inpos.Relation;Inpos.Checkvalue
+test_stoppointdata;0;True;25;40;0,1;5;6;7;"ola";8;9
