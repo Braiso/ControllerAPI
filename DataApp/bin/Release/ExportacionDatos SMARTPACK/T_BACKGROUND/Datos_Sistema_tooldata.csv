@@ -1,8 +1,0 @@
-Nombre;Robhold;Tframe.Trans.X;Tframe.Trans.Y;Tframe.Trans.Z;Tframe.Rot.Q1;Tframe.Rot.Q2;Tframe.Rot.Q3;Tframe.Rot.Q4;Tload.Mass;Tload.Cog.X;Tload.Cog.Y;Tload.Cog.Z;Tload.Aom.Q1;Tload.Aom.Q2;Tload.Aom.Q3;Tload.Aom.Q4;Tload.Ix;Tload.Iy;Tload.Iz
-tMedida1;True;-82,3063;1,06751;790,183;1;0;0;0;58,31;23,3;10,3;230,2;1;0;0;0;4,707;5,416;1,662
-tCalib;True;-5,83696;-460,727;636,911;0;1;0;0;58,31;23,3;10,3;230,2;1;0;0;0;4,707;5,416;1,662
-t_alcance;True;0;0;-135;1;0;0;0;1;0;0;1;1;0;0;0;0;0;0
-tRotLargo;True;-30;0;679;0;0;0;1;1;0;0;1;1;0;0;0;0;0;0
-tActual;True;0;0;0;1;0;0;0;0,001;0;0;0,001;1;0;0;0;0;0;0
-tRotCorto;True;30;0;679;1;0;0;0;1;0;0;1;1;0;0;0;0;0;0
-tCentral;True;0;0;694,5;0,707107;0;0;-0,707107;58,31;23,3;10,3;230,2;1;0;0;0;4,707;5,416;1,662

@@ -1,8 +1,0 @@
-Nombre;Robhold;Ufprog;Ufmec;Uframe.Trans.X;Uframe.Trans.Y;Uframe.Trans.Z;Uframe.Rot.Q1;Uframe.Rot.Q2;Uframe.Rot.Q3;Uframe.Rot.Q4;Oframe.Trans.X;Oframe.Trans.Y;Oframe.Trans.Z;Oframe.Rot.Q1;Oframe.Rot.Q2;Oframe.Rot.Q3;Oframe.Rot.Q4
-wobj0_mod;False;True;;0;0;-602,561;0,760493;0;0;0,649346;0;0;0;1;0;0;0
-wobjReferencia;False;True;;-204,092;1521,26;2873,39;0,00210312;0,701441;-0,712724;-0,000146339;0;0;0;1;0;0;0
-wobj_camM1;False;True;;-204,092;1521,26;2873,39;0,00210312;0,701441;-0,712724;-0,000146339;0;0;0;1;0;0;0
-wobj_cinta;False;True;;738;0;63;0,704361;0,00431439;0;-0,709829;0;0;0;1;0;0;0
-lcl_workobject;False;True;;639,513;805,888;-602,561;0,999991;0,00160819;-0,00121316;0,00378779;0;0;0;1;0;0;0
-wobj_paleM2;False;True;;341,36;-827,903;-435,853;0,00503007;0,00038374;0,000861534;-0,999987;0;0;0;1;0;0;0
-wobj_camM2;False;True;;-234,595;-1078,5;2880,56;0,00305895;0,704244;-0,709947;0,00262869;0;0;0;1;0;0;0

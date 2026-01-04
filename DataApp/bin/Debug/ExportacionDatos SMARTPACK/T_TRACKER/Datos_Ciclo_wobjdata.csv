@@ -1,4 +1,0 @@
-Nombre;Robhold;Ufprog;Ufmec;Uframe.Trans.X;Uframe.Trans.Y;Uframe.Trans.Z;Uframe.Rot.Q1;Uframe.Rot.Q2;Uframe.Rot.Q3;Uframe.Rot.Q4;Oframe.Trans.X;Oframe.Trans.Y;Oframe.Trans.Z;Oframe.Rot.Q1;Oframe.Rot.Q2;Oframe.Rot.Q3;Oframe.Rot.Q4
-wobj_mesa;False;True;;639,513;805,888;-602,561;0,999991;0,00160819;-0,00121316;0,00378779;-1315,62;167,008;174,085;1;-0,000477544;0,000708039;-0,000470302
-wobj_caixa;False;False;CNV1;0;0;0;1;0;0;0;0;15;0;1;0;0;0
-wobjCR;False;True;;639,513;805,888;-602,561;0,999991;0,00160819;-0,00121316;0,00378779;0;0;0;1;0;0;0
