@@ -13,9 +13,9 @@ nOffPosCogidaAuxM1;30
 nOffCogidaAuxM1;30
 nOffAntCogidaM1;60
 nTmpAntSopCajaM1;0
-nTmpPulsoSopladoM1;0.5
+nTmpPulsoSopladoM1;0,5
 nTmpPosSopVentosaM1;0
-nTmpPosDejadaM1;0.1
+nTmpPosDejadaM1;0,1
 nTmpAntDejadaM1;0
 nTmpPosVacCajaM1;0
 nTmpPosCogida2M1;0

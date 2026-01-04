@@ -1,6 +1,23 @@
 Nombre;Valor
 stSysID_Tarea;"4600-112104"
 stTaskName;"T_ROB1"
-stPosicionDestino;["IrPosicionSobreMesa","CogerPieza","IrPosicionEsperaCaja","DejarPieza"]
-stPosicionAlcanzadaCalib;["CalibCamaraOK_T1","CalibCamaraOK","GetCalibOK_T1","GetCalibOK"]
-stPosicionAlcanzada;["PosicionSobreMesaT1","PosicionSobreMesa","PiezaCogidaT1","ApiracionActivada","PiezaCogida","EsperaDejadaPiezaT1","EsperaDejadaPiezaT2","EsperaDejadaPieza","PiezaColocadaT1","AspiracionDesactivada","PiezaColocada","MesaHomeT1"]
+stPosicionDestino {0};"IrPosicionSobreMesa"
+stPosicionDestino {1};"CogerPieza"
+stPosicionDestino {2};"IrPosicionEsperaCaja"
+stPosicionDestino {3};"DejarPieza"
+stPosicionAlcanzadaCalib {0};"CalibCamaraOK_T1"
+stPosicionAlcanzadaCalib {1};"CalibCamaraOK"
+stPosicionAlcanzadaCalib {2};"GetCalibOK_T1"
+stPosicionAlcanzadaCalib {3};"GetCalibOK"
+stPosicionAlcanzada {0};"PosicionSobreMesaT1"
+stPosicionAlcanzada {1};"PosicionSobreMesa"
+stPosicionAlcanzada {2};"PiezaCogidaT1"
+stPosicionAlcanzada {3};"ApiracionActivada"
+stPosicionAlcanzada {4};"PiezaCogida"
+stPosicionAlcanzada {5};"EsperaDejadaPiezaT1"
+stPosicionAlcanzada {6};"EsperaDejadaPiezaT2"
+stPosicionAlcanzada {7};"EsperaDejadaPieza"
+stPosicionAlcanzada {8};"PiezaColocadaT1"
+stPosicionAlcanzada {9};"AspiracionDesactivada"
+stPosicionAlcanzada {10};"PiezaColocada"
+stPosicionAlcanzada {11};"MesaHomeT1"

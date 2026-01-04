@@ -121,13 +121,43 @@ namespace ControllerAPI
                     foreach (var data in entry.Value)
                     {
                         string valor;
-                        if (!TryFormatValue(entry.Key, data.Value, out valor))
+                        
+                        // Si es array se tiene que iterar sobre el
+                        if (data.IsArray)
                         {
-                            _notImplemented.Add(entry.Key);
-                            valor = data.Value.ToString();
-                        }
 
-                        writer.WriteLine(data.Name + ";" + valor);
+                            var array = data.Value as ArrayData;
+                            if (array == null)
+                            {
+                                // fallback seguro
+                                writer.WriteLine($"{data.Name};{data.Value}");
+                                continue;
+                            }
+
+                            int length = array.Length;
+
+                            for (int i = 0; i < length; i++)
+                            {
+
+                                if (!TryFormatValue(entry.Key, array[i], out valor))
+                                {
+                                    _notImplemented.Add(entry.Key);
+                                    valor = array[i].ToString();
+                                }
+
+                                writer.WriteLine(data.Name + " {" + i + "}" + ";" + valor);
+                            }
+                        }
+                        else
+                        {
+                            if (!TryFormatValue(entry.Key, data.Value, out valor))
+                            {
+                                _notImplemented.Add(entry.Key);
+                                valor = data.Value.ToString();
+                            }
+
+                            writer.WriteLine(data.Name + ";" + valor);
+                        }
                     }
                 }
             }
@@ -270,6 +300,12 @@ namespace ControllerAPI
                     return true;
                 case "speeddata":
                     valor = Parse.ParseSpeedData(ud);
+                    return true;
+                case "tempmov":
+                    valor = Parse.ParseTempMov(ud);
+                    return true;
+                case "volumen":
+                    valor = Parse.ParseVolumen(ud);
                     return true;
                 default:
                     return false;

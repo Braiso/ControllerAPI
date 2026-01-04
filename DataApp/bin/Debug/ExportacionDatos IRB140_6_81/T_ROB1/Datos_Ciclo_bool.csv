@@ -1,2 +1,7 @@
 Nombre;Valor
 test_bool;True
+test_bool_array {0};True
+test_bool_array {1};False
+test_bool_array {2};True
+test_bool_array {3};False
+test_bool_array {4};True

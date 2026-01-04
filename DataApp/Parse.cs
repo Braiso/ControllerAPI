@@ -310,6 +310,24 @@ namespace ControllerAPI
                            "Trans.X;Trans.Y;Trans.Z;" +
                            "Rot.Q1;Rot.Q2;Rot.Q3;Rot.Q4";
 
+                case "tempmov":
+                    /* Estructura tempmov
+                    paro of bool
+                    tiempo of dnum
+                    string fecha
+                    string hora
+                     */
+                    return "Nombre;paro;tiempo;fecha;hora";
+                case "volumen":
+                    /*
+                    RECORD volumen
+                        num X_Pos;
+                        num X_Neg;
+                        num Y_Pos;
+                        num Y_Neg;
+                    ENDRECORD
+                     */
+                    return "Nombre;X_Pos;X_Neg;Y_Pos;Y_Neg";
                 default:
                     return "Nombre;Valor";
             }
@@ -454,6 +472,25 @@ namespace ControllerAPI
             double oride = ((Num)vd.Components[0]).Value;
             double max = ((Num)vd.Components[1]).Value;
             return $"{oride};{max}";
+        }
+        public static string ParseTempMov(UserDefined tm)
+        {
+            string paro = tm.Components[0].ToString();
+            double tiempo = ((Dnum)tm.Components[1]).Value;
+            string fecha = tm.Components[2].ToString();
+            string hora = tm.Components[3].ToString();
+
+            return $"{paro};{tiempo};{fecha};{hora}";
+        }
+
+        public static string ParseVolumen(UserDefined v)
+        {
+            double X_Pos = ((Num)v.Components[0]).Value;
+            double X_Neg = ((Num)v.Components[1]).Value;
+            double Y_Pos = ((Num)v.Components[2]).Value;
+            double Y_Neg = ((Num)v.Components[3]).Value;
+
+            return $"{X_Pos};{X_Neg};{Y_Pos};{Y_Neg}";
         }
     }
 }

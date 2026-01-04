@@ -1,2 +1,7 @@
 Nombre;Valor
 test_dn;62067,47
+test_dn_array {0};6,1
+test_dn_array {1};7,203
+test_dn_array {2};120,121
+test_dn_array {3};9,47
+test_dn_array {4};-0,1

@@ -1,5 +1,10 @@
 Nombre;Valor
 test_num3;-0,715123
 test_num1;7151,23
+test_num_array {0};0
+test_num_array {1};1,1
+test_num_array {2};2,2
+test_num_array {3};3,001
+test_num_array {4};120,882
 test_num4;0
 test_num2;715,123
