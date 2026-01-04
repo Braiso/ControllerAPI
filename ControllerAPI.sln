@@ -8,6 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{E81AE47A-FA7C-4D54-8B44-19F08A0CD7DF}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		License = License
+		Readme.md = Readme.md
+		run.bat = run.bat
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidDataExport.Tests", "RapidDataExport.Tests\RapidDataExport.Tests.csproj", "{485D0AEF-C15B-4EDD-9C9C-944D5DB835E6}"
