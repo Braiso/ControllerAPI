@@ -34,8 +34,6 @@ namespace ControllerAPI
             // Se recorren los modulos de cada tarea, exportando los datos en el contenidos
             foreach (Task task in controller.Rapid.GetTasks())
             {
-                _logger.LogInformation($"Procesando Tarea: {task}");
-
                 // Por cada tarea se establece un directorio donde se guardaran 
                 // los CSV correspondientes a cada tarea
                 string taskDir = Path.Combine(baseDir, task.Name);
@@ -44,7 +42,7 @@ namespace ControllerAPI
                 // Se exporta cada modulo por separado
                 foreach (Module module in task.GetModules())
                 {
-                    _logger.LogInformation($"Procesando Modulo: {module}");
+                    _logger.LogInformation($"Procesando Tarea: {task} -> Modulo: {module}");
                     ExportModule(module, taskDir);
                 }
             }
@@ -182,7 +180,7 @@ namespace ControllerAPI
         /// <c>true</c> si el valor se ha formateado correctamente;  
         /// <c>false</c> si el tipo RAPID no está soportado o no se puede convertir.
         /// </returns>
-        private bool TryFormatValue(string rapidTypeName, object value, out string valor)
+        internal bool TryFormatValue(string rapidTypeName, object value, out string valor)
         {
             valor = null;
             double valorDoble;

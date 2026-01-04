@@ -1,0 +1,2 @@
+Nombre;Robhold;Tframe.Trans.X;Tframe.Trans.Y;Tframe.Trans.Z;Tframe.Rot.Q1;Tframe.Rot.Q2;Tframe.Rot.Q3;Tframe.Rot.Q4;Tload.Mass;Tload.Cog.X;Tload.Cog.Y;Tload.Cog.Z;Tload.Aom.Q1;Tload.Aom.Q2;Tload.Aom.Q3;Tload.Aom.Q4;Tload.Ix;Tload.Iy;Tload.Iz
+test_tooldata;True;399,944;325;673,543;0,00617059;0,70708;-0,70708;-0,00617059;58,31;21,7;8,5;223;1;0;0;0;4,231;4,714;1,588

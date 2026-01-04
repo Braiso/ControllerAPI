@@ -1,0 +1,17 @@
+Nombre;Finep;Pzone_tcp;Pzone_ori;Pzone_eax;Zone_ori;Zone_leax;Zone_reax
+zPosDejadaM2;False;100;150;150;15;150;15
+zPosDejadaAux1M2;False;50;75;75;7,5;75;7,5
+zDejadaM2;True;0;0;0;0;0;0
+zDejadaAux3M2;False;10;15;15;1,5;15;1,5
+zDejadaAux2M2;False;10;15;15;1,5;15;1,5
+zDejadaAux1M2;False;10;15;15;1,5;15;1,5
+zAntDejadaM2;False;100;150;150;15;150;15
+zFueraPosCnvM2;False;200;300;300;30;300;30
+zFueraAntCnvM2;False;200;300;300;30;300;30
+zFueraPosMesaM2;False;200;300;300;30;300;30
+zFueraAntMesaM2;False;200;300;300;30;300;30
+zPosCogidaM2;False;100;150;150;15;150;15
+zPosCogidaAux1M2;False;50;75;75;7,5;75;7,5
+zCogidaM2;True;0;0;0;0;0;0
+zCogidaAux1M2;False;50;75;75;7,5;75;7,5
+zAntCogidaM2;False;100;150;150;15;150;15
